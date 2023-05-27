@@ -1,7 +1,7 @@
 Config = {}
 
 Config.defaultlang = "en_lang"
-Config.DevMode = false -- enable this if you want to make testes, dont leave true in live servers
+
 Config.Webhook = '' -- WEBHOOK VORPCORE
 
 -- Crafting Key
@@ -16,7 +16,7 @@ Config.Styles = {
 }
 
 Config.Commands = {
-    campfire = true,
+    campfire = false,
     extinguish = true
 }
 
