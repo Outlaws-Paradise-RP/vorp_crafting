@@ -1,7 +1,7 @@
 Config = {}
 
 Config.defaultlang = "en_lang"
-Config.DevMode = false -- enable this if you want to make testes, dont leave true in live servers
+
 Config.Webhook = '' -- WEBHOOK VORPCORE
 
 -- Crafting Key
@@ -64,7 +64,7 @@ Config.KneelingAnimation = true
 
 -- Crafting Prop Location is resource intensive, turn this to false if you want to use less resources.
 -- Disables/Enables Crafting Props
-Config.CraftingPropsEnabled = true
+Config.CraftingPropsEnabled = false
 
 -- Props for the player to craft at
 -- List of porps you can use for crafting
@@ -103,18 +103,18 @@ Config.Categories = {
         Location = 0,
         Job = 0
     },
-    {
-        ident = 'weapons',
-        text = 'Weapons',
-        Location = 0,
-        Job = 0
-    },
-    {
-        ident = 'meleeweapons',
-        text = 'Melee weapons',
-        Location = 0,
-        Job = 0
-    },
+    -- {
+    --     ident = 'weapons',
+    --     text = 'Weapons',
+    --     Location = 0,
+    --     Job = 0
+    -- },
+    -- {
+    --     ident = 'meleeweapons',
+    --     text = 'Melee weapons',
+    --     Location = 0,
+    --     Job = 0
+    -- },
 }
 
 -- Craftable Items/Rewards And their Recipes
@@ -148,7 +148,7 @@ Config.Categories = {
 -- }
 Config.Crafting = {
     {
-        Text = "Meat Bfast ",
+        Text = "Beef Breakfast",
         SubText = "InvMax = 10",
         Desc = "Recipe: 1x Meat, 1x Salt",
         Items = {
@@ -160,13 +160,13 @@ Config.Crafting = {
             {
                 name = "salt",
                 count = 1,
-                take = false -- This determines if recipe items will be taken from inventory after crafting. If ommited, it will default to true.
+                take = true -- This determines if recipe items will be taken from inventory after crafting. If ommited, it will default to true.
             }
         },
         Reward = {
             {
                 name = "consumable_breakfast",
-                count = 1
+                count = 2,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -184,18 +184,20 @@ Config.Crafting = {
         Desc = "Recipe: 1 x SGM, 1 x Salt",
         Items = {
             {
-                name = "consumable_game",
-                count = 1
+                name = "provision_meat_game",
+                count = 1,
+                take = true
             },
             {
                 name = "salt",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
-                name = "cookedsmallgame",
-                count = 2
+                name = "consumable_meat_game_cooked",
+                count = 2,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -213,29 +215,34 @@ Config.Crafting = {
         Items = {
             {
                 name = "apple",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "water",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "sugar",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "flour",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "eggs",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward = {
             {
                 name = "consumable_applepie",
-                count = 1
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -253,13 +260,14 @@ Config.Crafting = {
         Items = {
             {
                 name = "meat",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward = {
             {
-                name = "steak",
-                count = 1
+                name = "consumable_steak",
+                count = 1,
             }
         },
         Type = "item",
@@ -271,23 +279,25 @@ Config.Crafting = {
         Animation = 'spindlecook'
     },
     {
-        Text = "Breakfast ",
+        Text = "Pork Breakfast",
         SubText = "InvMax = 5",
-        Desc = "Recipe: 1x Pork, 2x Eggs",
+        Desc = "Recipe: 1x Meat, 2x Eggs",
         Items = {
             {
-                name = "Pork",
-                count = 1
+                name = "meat",
+                count = 1,
+                take = true
             },
             {
                 name = "eggs",
-                count = 2
+                count = 2,
+                take = true
             }
         }, 
         Reward = {
             {
                 name = "consumable_breakfast",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -304,29 +314,34 @@ Config.Crafting = {
         Items = {
             {
                 name = "blueberry",
-                count = 6
+                count = 6,
+                take = true
             },
             {
                 name = "water",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "sugar",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "eggs",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "flour",
-                count = 1
+                count = 1,
+                take = true
             }
         }, 
         Reward = {
             {
                 name = "consumable_blueberrypie",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -339,21 +354,23 @@ Config.Crafting = {
     {
         Text = "Seasoned Porkchop",
         SubText = "InvMax = 10 ",
-        Desc = "Recipe: 1x Pork, 1x Salt",
+        Desc = "Recipe: 1x Meat, 1x Salt",
         Items = {
             {
-                name = "Pork",
-                count = 1
+                name = "meat",
+                count = 1,
+                take = true
             },
             {
                 name = "salt",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
-                name = "knifecooking",
-                count = 1
+                name = "consumable_seasoned_porkchop",
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -370,18 +387,20 @@ Config.Crafting = {
         Desc = "Recipe 1x Big Game Meat, 1x Salt",
         Items = {
             {
-                name = "BigGameMeat",
-                count = 1
+                name = "provision_meat_big_game",
+                count = 1,
+                take = true
             },
             {
                 name = "salt",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward = {
             {
-                name = "SaltedCookedBigGameMeat",
-                count = 1
+                name = "consumable_meat_big_game_cooked",
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -398,14 +417,15 @@ Config.Crafting = {
         Desc = "Recipe: 1x Big Game Meat",
         Items = {
             {
-                name = "BigGameMeat",
-                count = 1
+                name = "provision_meat_big_game",
+                count = 1,
+                take = true
             }
         },
         Reward = {
             {
-                name = "CookedBigGameMeat",
-                count = 1
+                name = "consumable_meat_big_game_cooked",
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -417,19 +437,20 @@ Config.Crafting = {
         Animation = 'spindlecook'
     },
     {
-        Text = "PorkChop ",
+        Text = "PorkChop",
         SubText = "InvMax = 10",
-        Desc = "Recipe: 1x Pork",
+        Desc = "Recipe: 1x Meat",
         Items = {
             {
-                name = "Pork",
-                count = 1
+                name = "meat",
+                count = 1,
+                take = true
             }
         },
         Reward = {
             {
-                name = "cookedpork",
-                count = 1
+                name = "consumable_porkchop",
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -447,17 +468,19 @@ Config.Crafting = {
         Items = {
             {
                 name = "iron",
-                count = 10
+                count = 1,
+                take = true0
             },
             {
                 name = "wood",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward = {
             {
                 name = "pickaxe",
-                count = 1
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -474,17 +497,19 @@ Config.Crafting = {
         Items = {
             {
                 name = "iron",
-                count = 10
+                count = 1,
+                take = true
             },
             {
                 name = "wood",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
                 name = "Axe",
-                count = 1
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -501,21 +526,24 @@ Config.Crafting = {
         Items = {
             {
                 name = "rock",
-                count = 10
+                count = 1,
+                take = true
             },
             {
                 name = "wood",
-                count = 5
+                count = 5,
+                take = true
             },
             {
                 name = "coal",
-                count = 4
+                count = 4,
+                take = true
             }
         },
         Reward ={
             {
                 name = "campfire",
-                count = 1
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -531,14 +559,15 @@ Config.Crafting = {
         Desc = "Recipe: 1x Raw Bird Meat",
         Items = {
             {
-                name = "rawbirdmeat",
-                count = 1
+                name = "provision_meat_gamey_bird",
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
-                name = "cookedbird",
-                count = 1
+                name = "consumable_meat_gamey_bird_cooked",
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -555,13 +584,14 @@ Config.Crafting = {
         Items = {
             {
                 name = "goldnugget",
-                count = 14
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
                 --name = "gold", -- if you use the currency mode, you don't need a name section inside the reward section
-                count = 1
+                count = 1,
             }
         },
         Type = "item", -- indicate if it is 'weapon' or 'item'
@@ -577,14 +607,15 @@ Config.Crafting = {
         Desc = "Recipe: 1x Small Game Meat",
         Items = {
             {
-                name = "consumable_game",
-                count = 1
+                name = "provision_meat_game",
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
-                name = "plainsmallgame",
-                count = 1
+                name = "consumable_meat_game_cooked",
+                count = 1,
             }
         },
         Type = "item",
@@ -601,13 +632,14 @@ Config.Crafting = {
         Items = {
             {
                 name = "fibers",
-                count = 10
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
                 name = "rope",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -624,13 +656,14 @@ Config.Crafting = {
         Items = {
             {
                 name = "wool",
-                count = 10
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
                 name = "cloth",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -647,21 +680,24 @@ Config.Crafting = {
         Items = {
             {
                 name = "cloth",
-                count = 4
+                count = 4,
+                take = true
             },
             {
                 name = "rope",
-                count = 3
+                count = 3,
+                take = true
             },
             {
                 name = "wood",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
                 name = "tent",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -678,21 +714,24 @@ Config.Crafting = {
         Items = {
             {
                 name = "pelt",
-                count = 4
+                count = 4,
+                take = true
             },
             {
                 name = "cloth",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "wood",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
                 name = "bedroll",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -709,17 +748,19 @@ Config.Crafting = {
         Items = {
             {
                 name = "Indian_Tobbaco",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "fibers",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
                 name = "cigar",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -736,17 +777,19 @@ Config.Crafting = {
         Items = {
             {
                 name = "Indian_Tobbaco",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "fibers",
-                count = 1
+                count = 1,
+                take = true
             }
         },
         Reward ={
             {
                 name = "cigarette",
-                count = 1
+                count = 1,
             }
         },
         Type = "item",
@@ -759,25 +802,28 @@ Config.Crafting = {
     {
         Text = "Steak n' Eggs ",
         SubText = "InvMax = 10",
-        Desc = "Recipe: 2x Meat, 2x Eggs, 2x potatoes",
+        Desc = "Recipe: 2x Meat, 2x Eggs, 2x Potatoes",
         Items = {
             {
                 name = "meat",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "eggs",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "potato",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
-                name = "steakeggs",
-                count = 1
+                name = "consumable_steakandeggs",
+                count = 1,
             }
         },
         Type = "item",
@@ -794,29 +840,34 @@ Config.Crafting = {
         Items = {
             {
                 name = "carrot",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "corn",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "potato",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "water",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "salt",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
-                name = "vegstew",
-                count = 1
+                name = "consumable_soup",
+                count = 1,
             }
         },
         Type = "item",
@@ -829,21 +880,23 @@ Config.Crafting = {
     {
         Text = "Porkchops and Applesauce ",
         SubText = "InvMax = 10",
-        Desc = "Recipe: 1x Pork, 2x Apples",
+        Desc = "Recipe: 1x Meat, 2x Apples",
         Items = {
             {
-                name = "Pork",
-                count = 1
+                name = "meat",
+                count = 1,
+                take = true
             },
             {
                 name = "apple",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
-                name = "porknapples",
-                count = 1
+                name = "consumable_porknapples",
+                count = 1,
             }
         },
         Type = "item",
@@ -859,30 +912,35 @@ Config.Crafting = {
         Desc = "Recipe: 2x Raw Bird, 2x Carrots, 1x Corn, 2x Water, 2x Salt",
         Items = {
             {
-                name = "rawbirdmeat",
-                count = 2
+                name = "provision_meat_gamey_bird",
+                count = 2,
+                take = true
             },
             {
                 name = "carrot",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "corn",
-                count = 1
+                count = 1,
+                take = true
             },
             {
                 name = "water",
-                count = 2
+                count = 2,
+                take = true
             },
             {
                 name = "salt",
-                count = 2
+                count = 2,
+                take = true
             }
         },
         Reward ={
             {
-                name = "birdstew",
-                count = 1
+                name = "consumable_soup",
+                count = 1,
             }
         },
         Type = "item",
@@ -892,128 +950,95 @@ Config.Crafting = {
         CurrencyType = 0,
         Category = "food"
     },
-    {
-        Text = "Bird Stew ",
-        SubText = "InvMax = 10",
-        Desc = "Recipe: 2x Raw Bird, 2x Carrots, 1x Corn, 2x Water, 2x Salt",
-        Items = {
-            {
-                name = "rawbirdmeat",
-                count = 2
-            },
-            {
-                name = "carrot",
-                count = 2
-            },
-            {
-                name = "corn",
-                count = 1
-            },
-            {
-                name = "water",
-                count = 2
-            },
-            {
-                name = "salt",
-                count = 2
-            }
-        },
-        Reward ={
-            {
-                name = "birdstew",
-                count = 1
-            }
-        },
-        Type = "item",
-        Job = 0,
-        Location = 0, -- set to 0 to allow any locations from Config.Locations, or like { "butcher" } to job restriction
-        UseCurrencyMode = false,
-        CurrencyType = 0,
-        Category = "food"
-    },
-
-    {
-        Text = "Bow ",
-        SubText = "InvMax = 1",
-        Desc = "Recipe: 2x Hard wood, 4x Fibers",
-        Items = {
-            {
-                name = "hwood",
-                count = 2
-            },
-            {
-                name = "fibers",
-                count = 4
-            },
-        },
-        Reward ={
-            {
-                name = "WEAPON_BOW_IMPROVED",
-                count = 1
-            }
-        },
-        Type = "weapon", -- indicate if it is 'weapon' or 'item'
-        Job = 0, 
-        Location = 0,
-        Category = "weapons",
-        Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
-    },
-    {
-        Text = "Revolver Navy ",
-        SubText = "InvMax = 1",
-        Desc = "Recipe 1x Revolver barrel, 1x Revolver cylinder, 1x Revolver handle",
-        Items = {
-            {
-                name = "revolverbarrel",
-                count = 1
-            },
-            {
-                name = "revolvercylinder",
-                count = 1
-            },
-            {
-                name = "revolverhandle",
-                count = 1
-            },
-        },
-        Reward = {
-            {
-                name = "WEAPON_REVOLVER_NAVY",
-                count = 1
-            }
-        },
-        Type = "weapon", -- indicate if it is 'weapon' or 'item'
-        Job = 0, -- set to 0 to allow any jobs, or like { "butcher" } to job restriction
-        Location = 0, -- set to 0 to allow any locations from Config.Locations, or like { "butcher" } to job restriction
-        Category = "weapons",
-        Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
-    },
-    {
-        Text = "Knife ",
-        SubText = "InvMax = 1",
-        Desc = "Recipe 1x Iron, 1x Soft wood",
-        Items = {
-            {
-                name = "iron",
-                count = 1
-            },
-            {
-                name = "wood",
-                count = 1
-            },
-        },
-        Reward = {
-            {
-                name = "WEAPON_MELEE_KNIFE",
-                count = 1
-            }
-        },
-        Type = "weapon", -- indicate if it is 'weapon' or 'item'
-        Job = 0, -- set to 0 to allow any jobs, or like { "butcher" } to job restriction
-        Location = 0, -- set to 0 to allow any locations from Config.Locations, or like { "butcher" } to job restriction
-        Category = "meleeweapons",
-        Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
-    },
+    -- {
+    --     Text = "Bow ",
+    --     SubText = "InvMax = 1",
+    --     Desc = "Recipe: 2x Hard wood, 4x Fibers",
+    --     Items = {
+    --         {
+    --             name = "wood",
+    --             count = 2,
+    --             take = true
+    --         },
+    --         {
+    --             name = "fibers",
+    --             count = 4,
+    --             take = true
+    --         },
+    --     },
+    --     Reward ={
+    --         {
+    --             name = "WEAPON_BOW_IMPROVED",
+    --             count = 1,
+    --         }
+    --     },
+    --     Type = "weapon", -- indicate if it is 'weapon' or 'item'
+    --     Job = 0, 
+    --     Location = 0,
+    --     Category = "weapons",
+    --     Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
+    -- },
+    -- {
+    --     Text = "Revolver Navy ",
+    --     SubText = "InvMax = 1",
+    --     Desc = "Recipe 1x Revolver barrel, 1x Revolver cylinder, 1x Revolver handle",
+    --     Items = {
+    --         {
+    --             name = "revolverbarrel",
+    --             count = 1,
+    --             take = true
+    --         },
+    --         {
+    --             name = "revolvercylinder",
+    --             count = 1,
+    --             take = true
+    --         },
+    --         {
+    --             name = "revolverhandle",
+    --             count = 1,
+    --             take = true
+    --         },
+    --     },
+    --     Reward = {
+    --         {
+    --             name = "WEAPON_REVOLVER_NAVY",
+    --             count = 1,
+    --         }
+    --     },
+    --     Type = "weapon", -- indicate if it is 'weapon' or 'item'
+    --     Job = 0, -- set to 0 to allow any jobs, or like { "butcher" } to job restriction
+    --     Location = 0, -- set to 0 to allow any locations from Config.Locations, or like { "butcher" } to job restriction
+    --     Category = "weapons",
+    --     Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
+    -- -- },
+    -- {
+    --     Text = "Knife ",
+    --     SubText = "InvMax = 1",
+    --     Desc = "Recipe 1x Iron, 1x Soft wood",
+    --     Items = {
+    --         {
+    --             name = "iron",
+    --             count = 1,
+    --             take = true
+    --         },
+    --         {
+    --             name = "wood",
+    --             count = 1,
+    --             take = true
+    --         },
+    --     },
+    --     Reward = {
+    --         {
+    --             name = "WEAPON_MELEE_KNIFE",
+    --             count = 1,
+    --         }
+    --     },
+    --     Type = "weapon", -- indicate if it is 'weapon' or 'item'
+    --     Job = 0, -- set to 0 to allow any jobs, or like { "butcher" } to job restriction
+    --     Location = 0, -- set to 0 to allow any locations from Config.Locations, or like { "butcher" } to job restriction
+    --     Category = "meleeweapons",
+    --     Animation = 'craft' -- set what animation should play when crafting (if this is not set it has a default animation). Animations can be found below in Config.Animations
+    -- },
 }
 
 Config.Animations = {
